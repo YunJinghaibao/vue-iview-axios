@@ -1,7 +1,5 @@
 <template>
   <div class="home">
-    <!-- <Button type="info" @click="test">点击</Button>
-    <Button type="error" @click="test1">测试</Button> -->
     <Card style="width: 300px; height: 250px; margin: 150px auto">
       <div slot="title" style="text-align: center">
         <p style="font-size: 20px; font-weight: 600; font-family: 微软雅黑">请登陆</p>
@@ -53,24 +51,7 @@ export default {
     }
   },
   methods: {
-    test(){
-      http({
-        method: 'GET',
-        url: '/test',
-      }).then(res => {
-        console.log(res);
-      })
-    },
-    test1(){
-      http({
-        method: 'POST',
-        url: '/testo',
-        // data: qs.stringify(this.data),
-        data: this.data,
-      }).then(res => {
-        console.log(res);
-      })
-    }
+    
   },
 }
 </script>
