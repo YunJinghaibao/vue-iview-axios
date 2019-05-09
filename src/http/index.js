@@ -1,36 +1,45 @@
 import axios from 'axios'
 import qs from 'qs'
 import baseUrl from './config'
-
-const http = axios.create({
-    // baseURL: "http://localhost:1234",
+const httpService = axios.create({
     baseURL: baseUrl,
-    headers: {
-        // "Content-Type": "application/x-www-form-urlencoded;charset=utf-8", //form表单提交数据
-        // "Content-Type": "application/json;charset=utf-8",//json格式提交数据
-    },
     timeout: 3000,
-    msg: '123456',
+    withCredentials: true,
+    crossDomain: true,
+    // msg: '123456',  // 可带自定义配置
 })
-
-http.interceptors.request.use(
+httpService.interceptors.request.use(
     config => {
-        
+        // 可配置
         return config
     },
     error => {
         return Promise.reject(error)
     }
 )
-
-http.interceptors.response.use(
+httpService.interceptors.response.use(
     response => {
-
+        // 可处理response
         return response
     },
     error => {
         return Promise.reject(error)
     }
 )
-
-export default http;
+const get = (url, params) => {
+    return httpService.get(url, params);
+}
+const post = (url, data, json=false) => {
+    return httpService({
+        method: "POST",
+        url: url,
+        data: json ? qs.stringify(data) : data,
+        headers: {
+            "Content-Type": json ? "application/x-www-form-urlencoded;charset=utf-8" : "application/json;charset=utf-8",
+        }
+    })
+}
+export default {
+    get,
+    post,
+};
