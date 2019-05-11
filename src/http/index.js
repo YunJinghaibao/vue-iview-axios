@@ -1,17 +1,19 @@
-import axios from 'axios'
-import qs from 'qs'
-import baseUrl from './config'
+import store from '../store';
+import axios from 'axios';
+import qs from 'qs';
+import baseUrl from './config';
 const httpService = axios.create({
     baseURL: baseUrl,
     timeout: 3000,
     withCredentials: true,
     crossDomain: true,
     // msg: '123456',  // 可带自定义配置
-})
+});
 httpService.interceptors.request.use(
     config => {
         // 可配置
-        return config
+        store.commit('http', 0);
+        return config;
     },
     error => {
         return Promise.reject(error)
@@ -19,10 +21,11 @@ httpService.interceptors.request.use(
 )
 httpService.interceptors.response.use(
     response => {
-        // 可处理response
+        store.commit('http', 1);
         return response
     },
     error => {
+        store.commit('http', 2);
         return Promise.reject(error)
     }
 )
