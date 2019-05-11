@@ -6,12 +6,12 @@
       </div>
       <Row>
         <Col>
-          <Input placeholder="用户名/账号"></Input>
+          <Input prefix="ios-person" placeholder="用户名/账号"></Input>
         </Col>
       </Row>
       <Row>
         <Col>
-          <Input placeholder="密码"></Input>
+          <Input prefix="ios-key" placeholder="密码"></Input>
         </Col>
       </Row>
       <Row>
@@ -22,7 +22,7 @@
           <Row type="flex" justify="end">
             <Col>
               <Breadcrumb>
-                <BreadcrumbItem to="/">忘记密码</BreadcrumbItem>
+                <BreadcrumbItem to="/admin">忘记密码</BreadcrumbItem>
               </Breadcrumb>
             </Col>
           </Row>
@@ -38,25 +38,23 @@
 </template>
 
 <script>
-import http from '../http'
-import qs from 'qs'
+import http from "../http";
+import qs from "qs";
 export default {
-  name: 'home',
-  data(){
-    return{
+  name: "home",
+  data() {
+    return {
       data: {
-        name: 'haibao',
-        age: 1,
+        name: "haibao",
+        age: 1
       }
-    }
+    };
   },
-  methods: {
-
-  },
-}
+  methods: {}
+};
 </script>
 <style lang="less">
-.ivu-row{
+.ivu-row {
   margin-bottom: 15px;
 }
 </style>
