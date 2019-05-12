@@ -48,7 +48,7 @@ export default {
             this.psd = a
         },
         test(){
-            this.$post('/testo', this.datao, true).then(res => {
+            this.$post('/testo', this.datao).then(res => {
                 console.log(res);
             })
             // this.$get('/test', {params: this.data}).then(res => {

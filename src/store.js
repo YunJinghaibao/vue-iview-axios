@@ -8,7 +8,7 @@ export default new Vuex.Store({
 
     },
     mutations: {
-        http(state, value){
+        httpStatus(state, value){
             switch(value){
                 case 0:
                     Vue.prototype.$Loading.start();

@@ -20,6 +20,14 @@ Vue.config.productionTip = false
 Vue.prototype.$get = http.get;
 Vue.prototype.$post = http.post;
 
+router.beforeEach((to, from, next) => {
+    // console.log(to);
+    // console.log(from);
+    // store.commit('httpStatus', 0);
+    next();
+})
+
+
 new Vue({
     router,
     store,

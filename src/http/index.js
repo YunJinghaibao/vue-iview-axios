@@ -12,7 +12,7 @@ const httpService = axios.create({
 httpService.interceptors.request.use(
     config => {
         // 可配置
-        store.commit('http', 0);
+        store.commit('httpStatus', 0);
         return config;
     },
     error => {
@@ -21,11 +21,11 @@ httpService.interceptors.request.use(
 )
 httpService.interceptors.response.use(
     response => {
-        store.commit('http', 1);
+        store.commit('httpStatus', 1);
         return response
     },
     error => {
-        store.commit('http', 2);
+        store.commit('httpStatus', 2);
         return Promise.reject(error)
     }
 )
