@@ -4,7 +4,7 @@ import qs from 'qs';
 import baseUrl from './config';
 const httpService = axios.create({
     baseURL: baseUrl,
-    timeout: 3000,
+    timeout: 30000,
     withCredentials: true,
     crossDomain: true,
     // msg: '123456',  // 可带自定义配置
