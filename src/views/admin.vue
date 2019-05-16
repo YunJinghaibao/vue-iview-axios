@@ -18,7 +18,7 @@ export default {
             psd: null,
             data: {
                 name: 'haibao',
-                age: 1,
+                id: 3,
             },
             datao: [
                 {
@@ -51,9 +51,15 @@ export default {
             this.$post('/testo', this.datao, true).then(res => {
                 console.log(res);
             })
-            // this.$get('/test', {params: this.data}).then(res => {
-            //     console.log(res);
-            // });
+            this.$get('/test', {params: this.data}).then(res => {
+                console.log(res);
+            });
+            this.$get('/test1', {params: this.data}).then(res => {
+                console.log(res);
+            });
+            this.$get('/test2').then(res => {
+                console.log(res);
+            });
         },
     }
 }

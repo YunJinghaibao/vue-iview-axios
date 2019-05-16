@@ -29,7 +29,7 @@ httpService.interceptors.response.use(
         return Promise.reject(error)
     }
 )
-const get = (url, params) => {
+const get = (url, params = {params: {}}) => {
     return httpService.get(url, params);
 }
 const post = (url, data, json=false) => {
