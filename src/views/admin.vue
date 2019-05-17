@@ -11,6 +11,7 @@
 
 <script>
 import MD5 from 'js-md5';
+import Person from '../util/Person';
 export default {
     name: 'admin',
     data(){
@@ -18,7 +19,7 @@ export default {
             psd: null,
             data: {
                 name: 'haibao',
-                id: 3,
+                age: 2,
             },
             datao: [
                 {
@@ -40,6 +41,8 @@ export default {
         }
     },
     created(){
+        // let person = new Person(this);
+        // person.say();
         // console.log(this);
     },
     methods: {
@@ -48,6 +51,7 @@ export default {
             this.psd = a
         },
         test(){
+            console.log(new Person(123).vue);
             this.$post('/testo', this.datao, true).then(res => {
                 console.log(res);
             })
