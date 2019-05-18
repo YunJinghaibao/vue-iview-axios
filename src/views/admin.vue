@@ -51,19 +51,19 @@ export default {
             this.psd = a
         },
         test(){
-            console.log(new Person(123).vue);
+            // console.log(new Person(123).vue);
             this.$post('/testo', this.datao, true).then(res => {
                 console.log(res);
             })
-            this.$get('/test', {params: this.data}).then(res => {
-                console.log(res);
-            });
-            this.$get('/test1', {params: this.data}).then(res => {
-                console.log(res);
-            });
-            this.$get('/test2').then(res => {
-                console.log(res);
-            });
+            // this.$get('/test', {params: this.data}).then(res => {
+            //     console.log(res);
+            // });
+            // this.$get('/test1', {params: this.data}).then(res => {
+            //     console.log(res);
+            // });
+            // this.$get('/test2').then(res => {
+            //     console.log(res);
+            // });
         },
     }
 }
