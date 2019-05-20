@@ -18,7 +18,7 @@ export default {
         return{
             psd: null,
             data: {
-                name: 'haibao',
+                name: 'siyuan',
                 age: 2,
             },
             datao: [
@@ -52,12 +52,12 @@ export default {
         },
         test(){
             // console.log(new Person(123).vue);
-            this.$post('/testo', this.datao, true).then(res => {
-                console.log(res);
-            })
-            // this.$get('/test', {params: this.data}).then(res => {
+            // this.$post('/testo', this.datao, true).then(res => {
             //     console.log(res);
-            // });
+            // })
+            this.$get('/test', {params: this.data}).then(res => {
+                console.log(res);
+            });
             // this.$get('/test1', {params: this.data}).then(res => {
             //     console.log(res);
             // });
