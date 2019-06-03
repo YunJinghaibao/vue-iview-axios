@@ -6,6 +6,7 @@
                 <Input @input="iptC"></Input>
             </Col>
         </Row>
+        <Input v-model="name.name"></Input>
     </div>
 </template>
 
@@ -38,6 +39,7 @@ export default {
                     ids: [2, 2, 2, 2],
                 }
             ],
+            name: {},
         }
     },
     created(){
@@ -48,7 +50,8 @@ export default {
     methods: {
         iptC(v){
             let a = MD5(v);
-            this.psd = a
+            this.psd = a;
+            console.log(this.psd);
         },
         test(){
             // console.log(new Person(123).vue);
@@ -64,6 +67,8 @@ export default {
             // this.$get('/test2').then(res => {
             //     console.log(res);
             // });
+            // console.log(this.name);
+            // console.log(Object.keys(this.name));
         },
     }
 }

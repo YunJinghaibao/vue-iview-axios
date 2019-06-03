@@ -13,6 +13,7 @@ httpService.interceptors.request.use(
     config => {
         // 可配置
         store.commit('httpStatus', 0);
+        console.log(config);
         return config;
     },
     error => {
@@ -22,9 +23,14 @@ httpService.interceptors.request.use(
 httpService.interceptors.response.use(
     response => {
         store.commit('httpStatus', 1);
+        console.log(response);
         return response
     },
     error => {
+        console.log(error.toString());
+        if(error.toString() === 'Error: Request failed with status code 403'){
+            console.log(111);
+        }
         store.commit('httpStatus', 2);
         return Promise.reject(error)
     }
